@@ -4,7 +4,7 @@
     </td>
     <td>
         <section class="flex flex-1 bg-gray-200 rounded group-hover:bg-gray-300">
-            <img src="../images/image_placeholder.png" alt="" class="size-48 object-cover">
+            <img src="../../../public/assets/images/image_placeholder.png" alt="" class="size-48 object-cover">
             <span class="flex flex-col gap-2 justify-center">
                 <h4 class="font-bold text-2xl">Nama Kompetisi</h4>
                 <h5 class="font-medium text-xl">Penyelenggara</h5>
