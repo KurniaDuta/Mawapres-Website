@@ -13,12 +13,10 @@ prestasi/
 ├── config/
 │   ├── config.php
 │   ├── database.php
-│   └── .env
 ├── core/
 │   ├── App.php
 │   ├── Controller.php
 │   ├── Router.php
-│   └── Env.php
 ├── public/
 │   ├── css/
 │   ├── js/
@@ -28,6 +26,8 @@ prestasi/
 │       ├── admin/
 │       ├── kajur/
 │       ├── mahasiswa/
+├── vendor/
 ├── README.MD
 ├── .gitignore
+├── .env
 ```
