@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="style.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         rel="stylesheet" />
@@ -28,9 +28,38 @@
                 <table id="dynamicTable" class="border-separate border-spacing-1">
                     <tr>
                         <th class="bg-gray-400 rounded">No</th>
-                        <th class="bg-gray-400 rounded">Nama Mahasiswa</th>
-                        <th class="bg-gray-400 rounded">Peran Perlombaan</th>
-                        <th class="bg-gray-400 rounded">Aksi</th>
+                        <th class="bg-gray-400 rounded">Mahasiswa</th>
+                        <th class="bg-gray-400 rounded">Peran</th>
+                        <th class="bg-gray-400 rounded">Hapus</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center bg-gray-200 rounded py-3">
+                            1
+                        </td>
+                        <td class="bg-gray-200 rounded p-3 ">
+                            <select class="w-full">
+                                <!-- Opsi untuk nama mahasiswa -->
+                                <option value="Jono">Jono</option>'
+                                <option value="Joni">Joni</option>'
+                                <option value="Jini">Jini</option>'
+                                <!-- ambil dari db -->
+                            </select>
+                        </td>
+                        <td class="bg-gray-200 rounded p-3 w-52">
+                            <select class="w-full">
+                                <option value="Ketua">Ketua</option>
+                                <option value="Anggota">Anggota</option>
+                                <!-- ambil dari db -->
+                            </select>
+
+                        </td>
+                        <td class=" bg-gray-200 rounded  w-20">
+                            <div class="grid place-items-center">
+                                <button class="flex items-center rounded-md w-fit text-white bg-red-400 p-1">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </table>
                 <button id="addRowBtn" class="bg-[#31E266] text-white p-3 w-fit rounded-md flex">
@@ -53,7 +82,7 @@
         </main>
     </section>
 
-    <script src="../scripts/script.js" async defer></script>
+    <script src="" async defer></script>
 </body>
 
 </html>
