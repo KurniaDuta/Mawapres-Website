@@ -17,31 +17,17 @@ $fileUploadBoxes = [
         'description' => 'Poster dari kompetisi yang diikuti.'
     ]
 ];
+
+$title = "!Nama Kompetisi di sini!";
+$description = "Buka riwayat kompetisi";
+include "../../layouts/mahasiswa.php";
 ?>
 
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="../style.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-        rel="stylesheet" />
-
-</head>
-
 <body class="bg-[#D9D9D9] font-sans">
-    <?php include "sidebar.php"; ?>
     <section class="flex flex-col flex-1">
         <h4 class="text-3xl font-medium ml-10 py-3 text-[#4A68FF] ml-[340px]">
-            Data Riwayat</h4>
+            <?php echo $title; ?>
+        </h4>
         <main class="bg-white flex-1 m-8 rounded-xl p-8 flex flex-col justify-between ml-[340px] min-h-[560px]">
             <span class="flex flex-wrap p-16 justify-between gap-y-20">
                 <!-- BOX TEMPAT UPLOAD FILE -->
@@ -84,9 +70,4 @@ $fileUploadBoxes = [
 
         </main>
     </section>
-
-    <script src="../scripts/script.js" async defer></script>
-    <script src="../scripts/submission_confirmation.js" async_defer></script>
 </body>
-
-</html>
