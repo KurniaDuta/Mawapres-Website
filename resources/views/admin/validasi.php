@@ -6,7 +6,7 @@ include "../../layouts/admin.php";
 
 <body class="bg-[#D9D9D9] font-sans">
   <section class="flex flex-col flex-1">
-    <h4 class="text-3xl font-medium ml-10 py-3 text-[#4A68FF] ml-[340px]">
+    <h4 class="text-3xl font-medium py-3 text-[#4A68FF] ml-[340px]">
       <?php echo $title; ?></h4>
     <main class="bg-white flex-1 m-8 rounded-xl p-8 flex flex-col justify-between ml-[340px] min-h-[560px]">
       <span>
@@ -83,9 +83,5 @@ include "../../layouts/admin.php";
         </button>
       </span>
     </main>
-  </section>
 
-  <script src="script.js" async defer></script>
 </body>
-
-</html>
