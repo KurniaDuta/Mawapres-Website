@@ -30,7 +30,7 @@ $fileUploadBoxes = [
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="style.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         rel="stylesheet" />
@@ -50,7 +50,7 @@ $fileUploadBoxes = [
                         <section class="flex flex-col items-center p-2">
                             <h1 class="font-semibold text-2xl"><?php echo $box['title']; ?></h1>
                             <p class="text-base text-gray-500"><?php echo $box['description']; ?></p>
-                            <img src="../images/image_placeholder.png" alt="placeholder" class="size-56 object-cover">
+                            <img src="../../../public/assets/images/image_placeholder.png" alt="placeholder" class="size-56 object-cover">
                         </section>
                         <section class="w-full bg-[#2862C6] rounded-b-2xl flex justify-between px-4 py-2">
                             <input type="file" class="custom-file-input">

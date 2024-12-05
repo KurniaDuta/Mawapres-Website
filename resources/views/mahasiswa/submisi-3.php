@@ -22,13 +22,13 @@
     <?php include "sidebar.php"; ?>
     <section class="flex flex-col flex-1">
         <h4 class="text-3xl font-medium ml-10 py-3 text-[#4A68FF] ml-[340px]">
-            Data Submisi > Data Mahasiswa</h4>
+            Data Submisi > Data Pembimbing</h4>
         <main class="bg-white flex-1 m-8 rounded-xl p-8 flex flex-col justify-between ml-[340px] min-h-[560px]">
             <span class="flex flex-col gap-8">
                 <table id="dynamicTable" class="border-separate border-spacing-1">
                     <tr>
                         <th class="bg-gray-400 rounded">No</th>
-                        <th class="bg-gray-400 rounded">Mahasiswa</th>
+                        <th class="bg-gray-400 rounded">Dosen</th>
                         <th class="bg-gray-400 rounded">Peran</th>
                         <th class="bg-gray-400 rounded">Hapus</th>
                     </tr>
@@ -36,8 +36,8 @@
                         <td class="text-center bg-gray-200 rounded py-3">
                             1
                         </td>
-                        <td class="bg-gray-200 rounded p-3 ">
-                            <select class="w-full">
+                        <td class="bg-gray-200 rounded p-3">
+                            <select class="w-full select2">
                                 <!-- Opsi untuk nama mahasiswa -->
                                 <option value="Jono">Jono</option>'
                                 <option value="Joni">Joni</option>'
@@ -45,10 +45,10 @@
                                 <!-- ambil dari db -->
                             </select>
                         </td>
-                        <td class="bg-gray-200 rounded p-3 w-52">
+                        <td class="bg-gray-200 rounded p-3 w-96">
                             <select class="w-full">
-                                <option value="Ketua">Ketua</option>
-                                <option value="Anggota">Anggota</option>
+                                <option value="Membimbing mahasiswa menghasilkan produk saintifik bereputasi dan mendapat pengakuan tingkat Internasional">Membimbing mahasiswa menghasilkan produk saintifik bereputasi dan mendapat pengakuan tingkat Internasional</option>
+                                <option value="Membimbing mahasiswa mengikuti kompetisi dibidang akademik dan kemahasiswaan bereputasi dan mencapai juara tingkat Nasional">Membimbing mahasiswa mengikuti kompetisi dibidang akademik dan kemahasiswaan bereputasi dan mencapai juara tingkat Nasional</option>
                                 <!-- ambil dari db -->
                             </select>
 

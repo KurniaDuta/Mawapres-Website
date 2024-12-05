@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mawapres.id</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="style.css" rel="stylesheet" />
+  <link href="../style.css" rel="stylesheet" />
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     rel="stylesheet" />
@@ -22,7 +22,7 @@
       <div class="relative inline-block">
         <!-- Foto Profil -->
         <img
-          src="../images/image.png"
+          src="../../../public/assets/images/image.png"
           alt="profile"
           class="w-64 h-64 object-cover rounded-2xl" />
         <!-- Icon add_a_photo -->
