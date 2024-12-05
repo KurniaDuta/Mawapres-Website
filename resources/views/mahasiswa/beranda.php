@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$title = "Beranda";
+$description = "Ini adalah beranda mahasiswa.";
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mawapres.id</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="../style.css" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-    rel="stylesheet" />
-</head>
+include "../../layouts/mahasiswa.php";
+?>
 
+<!-- MAIN CONTENT -->
 <body class="bg-[#D9D9D9] font-sans flex flex-row">
-  <?php include "sidebar.php"; ?>
-
-  <!-- MAIN CONTENT -->
   <main class="bg-white flex-1 m-8 rounded-xl p-8 flex flex-col gap-8 ml-[340px]">
     <h1 class="text-3xl font-bold">Selamat Datang di SARIS</h1>
     <section class="flex flex-row w-full gap-[90px] ml-10 items-center">
@@ -105,9 +96,4 @@
     </div>
   </section>
   <!-- ------------ -->
-
-  <!-- External JS -->
-  <script src="scripts/script.js"></script>
 </body>
-
-</html>
