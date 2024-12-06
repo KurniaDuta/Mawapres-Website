@@ -28,7 +28,6 @@ include "../../layouts/mahasiswa.php";?>
         <main class="bg-white flex-1 m-8 rounded-xl p-8 flex flex-col gap-8 ml-[340px]">
             <?php 
             $isAdmin = true;
-
             include "../modular_submisi.php"?>
 
         </main>
