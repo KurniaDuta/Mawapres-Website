@@ -30,9 +30,9 @@ include "../../layouts/admin.php";
             </div>
         </section>
         <section class="flex justify-center gap-32 text-xl pt-10">
-            <button class="bg-[#2862C6] text-white p-3 rounded-lg py-4 px-10">
+            <a href="validasi.php" class="bg-[#2862C6] text-white p-3 rounded-lg py-4 px-10">
                 Validasi
-            </button>
+            </a>
         </section>
     </main>
     <!-- Pop up Ganti Password -->
