@@ -18,7 +18,8 @@ $dataToShow=[
     'tanggal_surat_tugas' => '2020-12-31',
 ];
 
-include "../../layouts/mahasiswa.php";?>
+// layout
+include "../../layouts/admin.php";?>
 
 <body class="bg-[#D9D9D9] font-sans">
     <section class="flex flex-col flex-1">
