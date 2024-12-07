@@ -1,5 +1,5 @@
 <?php
-include "../SidebarButton.php";
+include "resources\views\SidebarButton.php";
 
 // Membuat objek SidebarButton
 $sidebarButton = new SidebarButton();

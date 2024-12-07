@@ -84,7 +84,7 @@
             <!-- Gambar tekstur di atas background warna biru -->
             <div class="absolute inset-0 bg-cover bg-center opacity-[0.06]" style="background-image: url('/public/assets/images/pola.jpg');"></div>
 
-            <form action="/login" method="POST" class="flex flex-col items-center p-4 gap-1 w-96 relative z-10">
+            <form method="POST" class="flex flex-col items-center p-4 gap-1 w-96 relative z-10">
                 <span class="flex flex-col items-center">
                     <h1 class="font-bold mb-4 text-3xl text-white">
                         LOGIN

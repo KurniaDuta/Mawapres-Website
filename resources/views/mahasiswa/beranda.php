@@ -1,11 +1,11 @@
 <?php
 $title = "Beranda";
 $description = "Ini adalah beranda mahasiswa.";
-
-include "../../layouts/mahasiswa.php";
+include __DIR__ . '/../../layouts/mahasiswa.php';
 ?>
 
 <!-- MAIN CONTENT -->
+
 <body class="bg-[#D9D9D9] font-sans flex flex-row">
   <main class="bg-white flex-1 m-8 rounded-xl p-8 flex flex-col gap-8 ml-[340px]">
     <h1 class="text-3xl font-bold">Selamat Datang di SARIS</h1>
@@ -13,7 +13,7 @@ include "../../layouts/mahasiswa.php";
       <div class="relative inline-block">
         <!-- Foto Profil -->
         <img
-          src="../../../public/assets/images/image.png"
+          src="../../../public/assets/images/image.png" // ini harusnya diambil dari database tapi masih belum diimplementasikan
           alt="profile"
           class="w-64 h-64 object-cover rounded-2xl" />
         <!-- Icon add_a_photo -->
@@ -23,10 +23,10 @@ include "../../layouts/mahasiswa.php";
       </div>
       <div class="flex flex-col items-center gap-8 text-2xl">
         <span class="border-4 border-[#5088DA] w-[432px] p-5 rounded-xl">
-          Muhammad Erril Putra Pratidina
+          <?php echo htmlspecialchars($name); ?>
         </span>
         <span class="border-4 border-[#5088DA] w-[432px] p-5 rounded-xl">
-          2341720183
+          <?php echo htmlspecialchars($identifier); ?>
         </span>
       </div>
     </section>
