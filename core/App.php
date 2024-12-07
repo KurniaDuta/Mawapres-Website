@@ -93,7 +93,7 @@ class App
         }
 
         if ($viewPath) {
-            require_once __DIR__ . '/../../resources/views' . $viewPath . '.php';
+            require_once __DIR__ . '/../resources/views' . $viewPath . '.php';
             exit;
         }
     }

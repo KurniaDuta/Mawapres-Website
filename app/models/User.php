@@ -18,7 +18,7 @@ class User
     {
         try {
             // Search in mahasiswa table
-            $sqlMahasiswa = "SELECT 'mahasiswa' AS type, id_mahasiswa, nim AS identifier, password, name, email, foto_profil, angkatan, prodi_id 
+            $sqlMahasiswa = "SELECT 'mahasiswa' AS type, id_mahasiswa, nim AS identifier, password, nama, email, foto_profil, angkatan, prodi_id 
                             FROM mahasiswa 
                             WHERE nim = ?";
             $stmtMahasiswa = $this->db->prepareAndExecute($sqlMahasiswa, [$identifier]);
@@ -29,7 +29,7 @@ class User
             }
 
             // Search in admin table
-            $sqlAdmin = "SELECT 'admin' AS type, id, nip AS identifier, password, name, role, kontak, tanggal_lahir, tempat_lahir, foto_profil 
+            $sqlAdmin = "SELECT 'admin' AS type, id, nip AS identifier, password, nama, role, kontak, tanggal_lahir, tempat_lahir, foto_profil 
                         FROM admin 
                         WHERE nip = ?";
             $stmtAdmin = $this->db->prepareAndExecute($sqlAdmin, [$identifier]);
