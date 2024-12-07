@@ -2,7 +2,9 @@
 
 namespace Core;
 
-class Router 
+use App\ErrorHandler;
+
+class Router
 {
     private $routes = [
         'GET' => [],
@@ -10,35 +12,24 @@ class Router
         'PUT' => [],
         'DELETE' => []
     ];
+
     private $notFoundHandler;
 
-    public function __construct()
+    public function setNotFoundHandler(callable $handler)
     {
-        $this->notFoundHandler = function () {
-            http_response_code(404);
-            require_once BASE_PATH . '/resources/views/error/404.php';
-            exit;
-        };
+        $this->notFoundHandler = $handler;
     }
 
     public function get($route, $callback)
     {
         $this->addRoute('GET', $route, $callback);
+        return $this;
     }
 
     public function post($route, $callback)
     {
         $this->addRoute('POST', $route, $callback);
-    }
-
-    public function put($route, $callback)
-    {
-        $this->addRoute('PUT', $route, $callback);
-    }
-
-    public function delete($route, $callback)
-    {
-        $this->addRoute('DELETE', $route, $callback);
+        return $this;
     }
 
     private function addRoute($method, $route, $callback)
@@ -52,20 +43,21 @@ class Router
         return rtrim($route, '/') ?: '/';
     }
 
-    public function setNotFoundHandler($callback)
-    {
-        $this->notFoundHandler = $callback;
-    }
-
     public function dispatch($uri, $method)
     {
         $uri = $this->normalizeRoute($uri);
         $method = strtoupper($method);
-        
+
         if (isset($this->routes[$method][$uri])) {
             return call_user_func($this->routes[$method][$uri]);
         }
 
-        call_user_func($this->notFoundHandler);
+        // If no route is found, call the not found handler
+        if ($this->notFoundHandler) {
+            return call_user_func($this->notFoundHandler);
+            // Default 404 if no handler is set
+            ErrorHandler::handle404();
+        }
+
     }
 }

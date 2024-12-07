@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Saris</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -82,7 +82,7 @@
     <main class="relative flex items-center justify-center min-h-screen">
         <section class="bg-[#2862C6] p-8 rounded-lg shadow-lg relative">
             <!-- Gambar tekstur di atas background warna biru -->
-            <div class="absolute inset-0 bg-cover bg-center opacity-[0.06]" style="background-image: url('images/pola.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-[0.06]" style="background-image: url('/public/assets/images/pola.jpg');"></div>
 
             <form action="/login" method="POST" class="flex flex-col items-center p-4 gap-1 w-96 relative z-10">
                 <span class="flex flex-col items-center">
@@ -116,8 +116,8 @@
 
 
     <figure class="fixed top-0 left-0 w-screen h-screen -z-10">
-        <img src="../../public/assets/images/grapol.jpg" alt="Gambar 1" class="absolute inset-0 w-full h-full object-cover opacity-50">
-        <img src="../../public/assets/images/glass.jpg" alt="Gambar 2" class="absolute inset-0 w-full h-full object-cover opacity-25">
+        <img src="/assets/images/grapol.jpg" alt="Gambar 1" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <img src="/assets/images/glass.jpg" alt="Gambar 2" class="absolute inset-0 w-full h-full object-cover opacity-25">
         <div class="bg-gradient-to-tr from-[#2337EB] to-[#1278DE] absolute inset-0 w-full h-full opacity-20"></div>
     </figure>
 
