@@ -2,7 +2,8 @@
 $title = "Data Submisi > Data Pembimbing";
 $description = "";
 
-include "../../layouts/mahasiswa.php";
+// layout
+include "../../layouts/admin.php";
 
 $isDataPembimbing= true;
 $dataToShow = [

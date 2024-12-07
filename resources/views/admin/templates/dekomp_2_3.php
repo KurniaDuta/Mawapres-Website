@@ -7,9 +7,9 @@ function concateNomorIndukNama($nomor_induk, $name) {
 <span class="flex flex-col gap-8">
     <table id="dynamicTable" class="border-separate border-spacing-1">
         <tr>
-            <th class="bg-gray-400 rounded">No</th>
-            <th class="bg-gray-400 rounded"><?php if ($isDataPembimbing) {echo "Dosen";}else{echo "Mahasiswa";}?></th>
-            <th class="bg-gray-400 rounded">Peran</th>
+            <th class="bg-gray-400 rounded p-3">No</th>
+            <th class="bg-gray-400 rounded p-3"><?php if ($isDataPembimbing) {echo "Dosen";}else{echo "Mahasiswa";}?></th>
+            <th class="bg-gray-400 rounded p-3">Peran</th>
         </tr>
         <?php foreach ($dataToShow as $data): ?>
         <tr>
