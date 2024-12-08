@@ -20,7 +20,9 @@
         <div class="flex flex-col flex-1">
             <div class="flex">
                 <label for="tanggal_mulai" class="">Tanggal Mulai</label>
+                <?php if (!$isAdmin) :?>
                 <p class=" text-red-500">*</p>
+                <?php endif;?>
             </div>
             <p class="text-sm text-gray-400">Tanggal kompetisi dimulai.</p>
 
@@ -37,7 +39,9 @@
         <div class="flex flex-col flex-1">
             <div class="flex">
                 <label for="tanggal_selesai" class="">Tanggal Selesai</label>
+                <?php if (!$isAdmin) :?>
                 <p class=" text-red-500">*</p>
+                <?php endif;?>
             </div>
             <p class="text-sm text-gray-400">Tanggal kompetisi selesai.</p>
 
@@ -55,7 +59,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="penyelenggara" class="">Penyelenggara</label>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif;?>
         </div>
         <p class="text-sm text-gray-400">Tulis penyelenggara yang tertera pada dokumen-dokumen bukti.</p>
 
@@ -71,7 +77,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="jenis_kompetisi" class="">Jenis Kompetisi</label>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif;?>
         </div>
         <p class="text-sm text-gray-400">Pilih jenis di bawah yang paling cocok dengan kompetisimu.</p>
 
@@ -93,7 +101,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="tingkat_kompetisi" class="">Tingkat Kompetisi</label>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif;?>
         </div>
         <p class="text-sm text-gray-400">Pilih tingkat di bawah yang paling cocok dengan kompetisimu.</p>
 
@@ -115,7 +125,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="juara_kompetisi" class="">Juara Kompetisi</label>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif;?>
         </div>
         <p class="text-sm text-gray-400">Pilih juara di bawah yang paling cocok dengan kompetisimu.</p>
 
@@ -138,7 +150,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <h4 class="">URL Kompetisi</h4>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif;?>
         </div>
         <p class="text-sm text-gray-400">Tulis URL publikasi penyelenggara kompetisi.</p>
 
@@ -155,7 +169,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <h4 class="">Jumlah Peserta</h4>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif;?>
         </div>
         <p class="text-sm text-gray-400">Tulis jumlah peserta yang mengikuti kompetisi.</p>
 
@@ -172,7 +188,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="jumlah_pt" class="">Jumlah PT</label>
+            <?php if (!$isAdmin) :  ?>
             <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tulis jumlah perguruan tinggi yang mengikuti kompetisi.</p>
 
@@ -189,7 +207,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="nomor_surat_tugas" class="">Nomor Surat Tugas</label>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tulis nomor surat tugas.</p>
 
@@ -206,14 +226,16 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="tanggal_surat_tugas" class="">Tanggal Surat Tugas</label>
+            <?php if (!$isAdmin) :?>
             <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tanggal surat tugas diberikan.</p>
 
         <!-- input or show -->
         <?php if ($isAdmin) : ?>
             <section class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg flex items-center">
-                <?php echo $dataToShow['url_kompetisi'] ?>
+                <?php echo $dataToShow['tanggal_surat_tugas'] ?>
             </section>
         <?php else: ?>
             <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="date" name="tanggal_surat_tugas" id="tanggal_surat_tugas">
