@@ -58,6 +58,10 @@ include "../../layouts/kajur.php";?>
                         <button class="flex rounded-md  w-fit p-3 text-white bg-[#31E266] [box-shadow:0em_0.3em_0.3em#bcbcbc]">
                             <p>TAMBAH</p>
                         </button>
+                        <!-- Tombol Kembali -->
+                        <button type="button" class="flex rounded-md  w-fit p-3 text-white bg-gray-400 [box-shadow:0em_0.3em_0.3em#bcbcbc]" onclick="history.back()">
+                            <p>Kembali</p>
+                        </button>
                     </div>
                 </span>
             </form>

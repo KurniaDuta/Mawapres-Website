@@ -18,6 +18,24 @@ $dataToShow=[
     'tanggal_surat_tugas' => '2020-12-31',
 ];
 
+$dataKeanggotaan = [
+    ['nim' => '2341720184', 'nama' => 'Muhammad Erril', 'peran' => 'Ketua'],
+    ['nim' => '14132121312', 'nama' => 'Maulana Rangga', 'peran' => 'Anggota'],
+    ['nim' => '11323142142', 'nama' => 'John Doe', 'peran' => 'Anggota']
+];
+
+$dataDosen = [
+    'nama' => 'Dika Rizky Yunianto, S.Kom.',
+    'peran' => 'Membimbing mahasiswa menghasilkan...'
+];
+
+$dataLampiran = [
+    ['nama_file' => 'SuratTugas.pdf', 'url' => '/files/SuratTugas.pdf', 'keterangan' => 'File Surat Tugas'],
+    ['nama_file' => 'Sertifikat.pdf', 'url' => '/files/Sertifikat.pdf', 'keterangan' => 'File Sertifikat'],
+    ['nama_file' => 'Poster.png', 'url' => '/files/Poster.png', 'keterangan' => 'File Poster'],
+    ['nama_file' => 'KegiatanLomba.png', 'url' => '/files/KegiatanLomba.png', 'keterangan' => 'File Kegiatan Lomba']
+];
+
 include "../../layouts/kajur.php";?>
 
 <body class="bg-[#D9D9D9] font-sans">
