@@ -12,8 +12,12 @@
                 <?php echo $dataToShow['nama_kompetisi'] ?>
             </section>
         <?php else: ?>
-            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="nama_kompetisi" id="nama_kompetisi">
+            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="nama_kompetisi" id="nama_kompetisi"
+                <?php if (isset($dataToShow['nama_kompetisi'])): ?>
+                value="<?php echo $dataToShow['nama_kompetisi'] ?>">
         <?php endif; ?>
+        <!-- di atas untuk fitur revisi -->
+    <?php endif; ?>
 
     </span>
     <span class="flex flex-1 gap-16">
@@ -32,8 +36,11 @@
                     <?php echo $dataToShow['tanggal_mulai'] ?>
                 </section>
             <?php else: ?>
-                <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="date" name="tanggal_mulai" id="tanggal_mulai">
+                <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="date" name="tanggal_mulai" id="tanggal_mulai"
+                    <?php if (isset($dataToShow['tanggal_mulai'])): ?>
+                    value="<?php echo $dataToShow['tanggal_mulai'] ?>">
             <?php endif; ?>
+        <?php endif; ?>
 
         </div class="flex flex-col">
         <div class="flex flex-col flex-1">
@@ -51,8 +58,11 @@
                     <?php echo $dataToShow['tanggal_selesai'] ?>
                 </section>
             <?php else: ?>
-                <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="date" name="tanggal_selesai" id="tanggal_selesai">
+                <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="date" name="tanggal_selesai" id="tanggal_selesai"
+                    <?php if (isset($dataToShow['tanggal_selesai'])): ?>
+                    value="<?php echo $dataToShow['tanggal_selesai'] ?>">
             <?php endif; ?>
+        <?php endif; ?>
 
         </div>
     </span>
@@ -71,8 +81,11 @@
                 <?php echo $dataToShow['penyelenggara'] ?>
             </section>
         <?php else: ?>
-            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="penyelenggara" id="penyelenggara">
+            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="penyelenggara" id="penyelenggara"
+                <?php if (isset($dataToShow['penyelenggara'])): ?>
+                value="<?php echo $dataToShow['penyelenggara'] ?>">
         <?php endif; ?>
+    <?php endif; ?>
     </span>
     <span class="flex flex-col gap-2">
         <div class="flex">
@@ -90,11 +103,11 @@
             </section>
         <?php else: ?>
             <select name="jenis_kompetisi" id="jenis_kompetisi" class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg">
-                <option value="Akademik">Akademik</option>
-                <option value="Non Akademik">Non Akademik</option>
+                <option value="Akademik" <?php echo isset($dataToShow['jenis_kompetisi']) && $dataToShow['jenis_kompetisi'] == 'Akademik' ? 'selected' : ''; ?>>Akademik</option>
+                <option value="Non Akademik" <?php echo isset($dataToShow['jenis_kompetisi']) && $dataToShow['jenis_kompetisi'] == 'Non Akademik' ? 'selected' : ''; ?>>Non Akademik</option>
                 <!-- TODO: CONNECT KE TABLE DI DB SUPAYA OPTION DINAMIS -->
-
             </select>
+
         <?php endif; ?>
 
     </span>
@@ -114,8 +127,8 @@
             </section>
         <?php else: ?>
             <select name="tingkat_kompetisi" id="tingkat_kompetisi" class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg">
-                <option value="Nasional">Nasional</option>
-                <option value="Internasional">Internasional</option>
+                <option value="Nasional" <?php echo isset($dataToShow['tingkat_kompetisi']) && $dataToShow['tingkat_kompetisi'] == 'Nasional' ? 'selected' : ''; ?>>Nasional</option>
+                <option value="Internasional" <?php echo isset($dataToShow['tingkat_kompetisi']) && $dataToShow['tingkat_kompetisi'] == 'Internasional' ? 'selected' : ''; ?>>Internasional</option>
                 <!-- TODO: CONNECT KE TABLE DI DB SUPAYA OPTION DINAMIS -->
 
             </select>
@@ -138,8 +151,8 @@
             </section>
         <?php else: ?>
             <select name="juara_kompetisi" id="juara_kompetisi" class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg">
-                <option value="Juara Pertama">Juara Pertama</option>
-                <option value="Juara Kedua">Juara Kedua</option>
+                <option value="Juara Pertama" <?php echo isset($dataToShow['juara_kompetisi']) && $dataToShow['juara_kompetisi'] == 'Juara Pertama' ? 'selected' : ''; ?>>Juara Pertama</option>
+                <option value="Juara Kedua" <?php echo isset($dataToShow['juara_kompetisi']) && $dataToShow['juara_kompetisi'] == 'Juara Kedua' ? 'selected' : ''; ?>>Juara Kedua</option>
                 <!-- TODO: CONNECT KE TABLE DI DB SUPAYA OPTION DINAMIS -->
 
             </select>
@@ -149,7 +162,7 @@
 
     <span class="flex flex-col gap-2">
         <div class="flex">
-            <h4 class="">URL Kompetisi</h4>
+            <label for="url_kompetisi" class="">URL Kompetisi</label>
             <?php if (!$isAdmin) : ?>
                 <p class=" text-red-500">*</p>
             <?php endif; ?>
@@ -162,13 +175,16 @@
                 <?php echo $dataToShow['url_kompetisi'] ?>
             </section>
         <?php else: ?>
-            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="url_kompetisi" id="">
+            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="url_kompetisi" id=""
+                <?php if (isset($dataToShow['url_kompetisi'])): ?>
+                value="<?php echo $dataToShow['url_kompetisi'] ?>">
         <?php endif; ?>
+    <?php endif; ?>
     </span>
 
     <span class="flex flex-col gap-2">
         <div class="flex">
-            <h4 class="">Jumlah Peserta</h4>
+            <label for="jumlah_peserta" class="">Jumlah Peserta</label>
             <?php if (!$isAdmin) : ?>
                 <p class=" text-red-500">*</p>
             <?php endif; ?>
@@ -181,8 +197,11 @@
                 <?php echo $dataToShow['jumlah_peserta'] ?>
             </section>
         <?php else: ?>
-            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="number" name="jumlah_peserta" id="">
+            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="number" name="jumlah_peserta" id=""
+                <?php if (isset($dataToShow['jumlah_peserta'])): ?>
+                value="<?php echo $dataToShow['jumlah_peserta'] ?>">
         <?php endif; ?>
+    <?php endif; ?>
     </span>
 
     <span class="flex flex-col gap-2">
@@ -200,8 +219,11 @@
                 <?php echo $dataToShow['jumlah_pt'] ?>
             </section>
         <?php else: ?>
-            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="number" name="jumlah_pt" id="jumlah_pt">
+            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="number" name="jumlah_pt" id="jumlah_pt"
+                <?php if (isset($dataToShow['jumlah_pt'])): ?>
+                value="<?php echo $dataToShow['jumlah_pt'] ?>">
         <?php endif; ?>
+    <?php endif; ?>
     </span>
 
     <span class="flex flex-col gap-2">
@@ -219,8 +241,11 @@
                 <?php echo $dataToShow['nomor_surat_tugas'] ?>
             </section>
         <?php else: ?>
-            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="nomor_surat_tugas" id="nomor_surat_tugas">
+            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="text" name="nomor_surat_tugas" id="nomor_surat_tugas"
+                <?php if (isset($dataToShow['nomor_surat_tugas'])): ?>
+                value="<?php echo $dataToShow['nomor_surat_tugas'] ?>">
         <?php endif; ?>
+    <?php endif; ?>
     </span>
 
     <span class="flex flex-col gap-2">
@@ -238,8 +263,11 @@
                 <?php echo $dataToShow['tanggal_surat_tugas'] ?>
             </section>
         <?php else: ?>
-            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="date" name="tanggal_surat_tugas" id="tanggal_surat_tugas">
+            <input class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg" type="date" name="tanggal_surat_tugas" id="tanggal_surat_tugas"
+                <?php if (isset($dataToShow['tanggal_surat_tugas'])): ?>
+                value="<?php echo $dataToShow['tanggal_surat_tugas'] ?>">
         <?php endif; ?>
+    <?php endif; ?>
     </span>
 
     <span class="flex flex-col gap-4">
@@ -331,7 +359,7 @@
     </span>
 
     <span class="flex flex-wrap p-16 justify-between gap-y-8">
-    <h1 class="font-bold text-lg w-full">Data Mahasiswa</h1>
+        <h1 class="font-bold text-lg w-full">Data Mahasiswa</h1>
         <!-- modular submisi_4 -->
         <?php
         $isAdmin = false;
