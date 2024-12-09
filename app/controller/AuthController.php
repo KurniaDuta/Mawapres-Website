@@ -4,15 +4,37 @@ namespace App\Controller;
 
 use App\Models\User;
 
-class AuthController 
+class AuthController
 {
+    protected function checkAuthorization($expectedType, $expectedRole = null)
+    {
+        if (!isset($_SESSION['user'])) {
+            header("Location: /login");
+            exit;
+        }
+
+        $user = $_SESSION['user'];
+
+        // Validate user type
+        if ($user['type'] !== $expectedType) {
+            header("Location: /login");
+            exit;
+        }
+
+        // Additional role check for admin
+        if ($expectedRole !== null && $user['type'] === 'admin' && $user['role'] !== $expectedRole) {
+            header("Location: /login");
+            exit;
+        }
+    }
+
     public function showLoginForm()
     {
         // If already logged in, redirect based on role
         if (isset($_SESSION['user'])) {
             $this->redirectBasedOnRole();
         }
-        
+
         // Render login view
         require_once __DIR__ . '/../../resources/views/login.php';
         exit;
@@ -40,14 +62,14 @@ class AuthController
 
     public function logout()
     {
-        // Destroy session
-        session_unset();
-        session_destroy();
-        
-        // Start a new session
+        // Destroy all session data
+        session_unset();     // Remove all session variables
+        session_destroy();   // Destroy the session
+
+        // Start a new session (optional, but can help prevent session fixation)
         session_start();
-        
-        // Redirect to login
+
+        // Redirect to login page
         header("Location: /login");
         exit;
     }
