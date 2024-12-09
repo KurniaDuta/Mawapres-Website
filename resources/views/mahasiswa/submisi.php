@@ -1,5 +1,5 @@
 <?php
-$title = "Data Submisi > Detail Kompetisi";
+$title = "Data Submisi";
 $description = "";
 include "../../layouts/mahasiswa.php"; ?>
 
@@ -21,8 +21,8 @@ include "../../layouts/mahasiswa.php"; ?>
                     </p>
                 <?php endif; ?>
                 <div class="flex flex-row-reverse gap-3 w-full">
-                    <button class="flex rounded-md  w-fit p-3 text-white bg-[#31E266] [box-shadow:0em_0.3em_0.3em#bcbcbc]">
-                        <p>LANJUT</p>
+                    <button class="flex rounded-md  w-fit py-3 px-6 text-white bg-[#31E266] [box-shadow:0em_0.3em_0.3em#bcbcbc]">
+                        <p>KIRIM</p>
                         <span class="material-symbols-outlined">
                             arrow_forward
                         </span>
