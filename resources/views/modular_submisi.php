@@ -20,9 +20,9 @@
         <div class="flex flex-col flex-1">
             <div class="flex">
                 <label for="tanggal_mulai" class="">Tanggal Mulai</label>
-                <?php if (!$isAdmin) :?>
-                <p class=" text-red-500">*</p>
-                <?php endif;?>
+                <?php if (!$isAdmin) : ?>
+                    <p class=" text-red-500">*</p>
+                <?php endif; ?>
             </div>
             <p class="text-sm text-gray-400">Tanggal kompetisi dimulai.</p>
 
@@ -39,9 +39,9 @@
         <div class="flex flex-col flex-1">
             <div class="flex">
                 <label for="tanggal_selesai" class="">Tanggal Selesai</label>
-                <?php if (!$isAdmin) :?>
-                <p class=" text-red-500">*</p>
-                <?php endif;?>
+                <?php if (!$isAdmin) : ?>
+                    <p class=" text-red-500">*</p>
+                <?php endif; ?>
             </div>
             <p class="text-sm text-gray-400">Tanggal kompetisi selesai.</p>
 
@@ -59,9 +59,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="penyelenggara" class="">Penyelenggara</label>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
-            <?php endif;?>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tulis penyelenggara yang tertera pada dokumen-dokumen bukti.</p>
 
@@ -77,9 +77,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="jenis_kompetisi" class="">Jenis Kompetisi</label>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
-            <?php endif;?>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Pilih jenis di bawah yang paling cocok dengan kompetisimu.</p>
 
@@ -101,9 +101,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="tingkat_kompetisi" class="">Tingkat Kompetisi</label>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
-            <?php endif;?>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Pilih tingkat di bawah yang paling cocok dengan kompetisimu.</p>
 
@@ -125,9 +125,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="juara_kompetisi" class="">Juara Kompetisi</label>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
-            <?php endif;?>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Pilih juara di bawah yang paling cocok dengan kompetisimu.</p>
 
@@ -150,9 +150,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <h4 class="">URL Kompetisi</h4>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
-            <?php endif;?>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tulis URL publikasi penyelenggara kompetisi.</p>
 
@@ -169,9 +169,9 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <h4 class="">Jumlah Peserta</h4>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
-            <?php endif;?>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
+            <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tulis jumlah peserta yang mengikuti kompetisi.</p>
 
@@ -189,7 +189,7 @@
         <div class="flex">
             <label for="jumlah_pt" class="">Jumlah PT</label>
             <?php if (!$isAdmin) :  ?>
-            <p class=" text-red-500">*</p>
+                <p class=" text-red-500">*</p>
             <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tulis jumlah perguruan tinggi yang mengikuti kompetisi.</p>
@@ -207,8 +207,8 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="nomor_surat_tugas" class="">Nomor Surat Tugas</label>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
             <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tulis nomor surat tugas.</p>
@@ -226,8 +226,8 @@
     <span class="flex flex-col gap-2">
         <div class="flex">
             <label for="tanggal_surat_tugas" class="">Tanggal Surat Tugas</label>
-            <?php if (!$isAdmin) :?>
-            <p class=" text-red-500">*</p>
+            <?php if (!$isAdmin) : ?>
+                <p class=" text-red-500">*</p>
             <?php endif; ?>
         </div>
         <p class="text-sm text-gray-400">Tanggal surat tugas diberikan.</p>
@@ -242,19 +242,5 @@
         <?php endif; ?>
     </span>
 
-    <span class="text-red-500 flex justify-between">
-        <?php if (!$isAdmin) :?>
-        <p class="w-36">
-            *Wajib diisi.
-        </p>
-        <?php endif;?>
-        <div class="flex flex-row-reverse gap-3 w-full">
-            <button class="flex rounded-md  w-fit p-3 text-white bg-[#31E266] [box-shadow:0em_0.3em_0.3em#bcbcbc]">
-                <p>LANJUT</p>
-                <span class="material-symbols-outlined">
-                    arrow_forward
-                </span>
-            </button>
-        </div>
-    </span>
+    
 </form>
