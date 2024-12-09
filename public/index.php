@@ -1,24 +1,31 @@
 <?php
 
-session_start();
+// Autoload composer dependencies
+require_once __DIR__ . '/../vendor/autoload.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Import necessary classes
+use Core\App;
+use Core\Router;
 
-// Load environment and configuration
-require_once '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+// Load environment variables (optional, using vlucas/phpdotenv)
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 require_once '../config/config.php';
 require_once '../config/database.php';
-
-// Include core classes
-require_once '../core/Router.php';
+require_once '../app/controller/AuthController.php';
+require_once '../app/controller/MahasiswaController.php';
 require_once '../core/App.php';
+require_once '../core/Router.php';
 
-// Run the application
-use Core\App;
-$app = new App();
-$app->run();
+try {
+    // Initialize Router and App
+    $router = new Router();
+    $app = new App($router);
+
+    // Run the application
+    $app->run();
+} catch (Exception $e) {
+    // Global error handling
+    die('Application Error: ' . $e->getMessage());
+}

@@ -1,13 +1,25 @@
 <?php
 
 use App\Controller\AuthController;
-use Core\App;
+use App\Controller\MahasiswaController;
+use App\Controller\AdminController;
 
-$router->get('/', function () {
-    $authController = new AuthController();
-    $authController->redirectBasedOnRole();
-});
+return function($router) {
+    // Authentication Routes
+    $router->get('/login', [AuthController::class, 'showLoginForm']);
+    $router->post('/login', [AuthController::class, 'login']);
+    $router->get('/logout', [AuthController::class, 'logout']);
 
-$router->get('/login', [AuthController::class, 'showLoginForm']);
-$router->post('/login', [AuthController::class, 'login']);
-$router->get('/logout', [AuthController::class, 'logout']);
+    // Root/Home Route
+    $router->get('/', [AuthController::class, 'redirectBasedOnRole']);
+
+    // Mahasiswa Routes
+    $router->get('/mahasiswa', [MahasiswaController::class, 'index']);
+    $router->get('/mahasiswa/beranda', [MahasiswaController::class, 'dashboard']);
+    $router->get('/mahasiswa/prestasi', [MahasiswaController::class, 'prestasi']);
+    $router->get('/mahasiswa/riwayat', [MahasiswaController::class, 'riwayat']);
+
+    // Admin Routes
+    $router->get('/admin', [AdminController::class, 'index']);
+    $router->get('/admin/beranda', [AdminController::class, 'dashboard']);
+};
