@@ -88,7 +88,7 @@
 
     <main class="relative flex items-center justify-center min-h-screen">
         <section class="bg-[#2862C6] p-8 rounded-lg shadow-lg relative">
-            <div class="absolute inset-0 bg-cover bg-center opacity-[0.06]" style="background-image: url('/public/assets/images/pola.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-[0.06]" style="background-image: url('/assets/images/pola.jpg');"></div>
 
             <form method="POST" class="flex flex-col items-center p-4 gap-1 w-96 relative z-10">
                 <span class="flex flex-col items-center">
@@ -113,7 +113,7 @@
                 <!-- Submit Button -->
                 <span class="flex flex-col gap-5">
                     <button type="submit" class="bg-[#F35804] text-white py-2 px-4 rounded-md font-bold text-xl transition hover:scale-110 ease-in-out hover:shadow-xl duration-500'">MASUK</button>
-                    <button id="forgotPassword" class="underline text-white px-4 rounded-full font-bold text-xs">Lupa Password?</button>
+                    <button id="forgotPassword" class="bg-[#F35804] text-white px-4 py-1 mt-2 rounded-full font-bold text-xs">Lupa Password?</button>
                 </span>
             </form>
         </section>
