@@ -207,6 +207,70 @@
         <?php endif; ?>
     </span>
 
+
+    <!-- Keanggotaan -->
+    <span class="flex flex-col gap-2">
+        <h4>Keanggotaan</h4>
+        <p class="text-sm text-gray-400">Mahasiswa & Peran</p>
+        <?php foreach ($dataKeanggotaan as $anggota): ?>
+        <div class="flex gap-2">
+            <section class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg flex items-center">
+                <?php echo $anggota['nim'] . ' - ' . $anggota['nama'] ?>
+            </section>
+            <section class="p-2 h-14 w-32 [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg flex items-center justify-center">
+                <?php echo $anggota['peran'] ?>
+            </section>
+        </div>
+        <?php endforeach; ?>
+    </span>
+
+    <!-- Dosen Pembimbing -->
+    <span class="flex flex-col gap-2">
+        <p class="text-sm text-gray-400">Dosen Pembimbing & Peran</p>
+        <div class="flex gap-2">
+            <section class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg flex items-center">
+                <?php echo $dataDosen['nama'] ?>
+            </section>
+            <section class="p-2 h-14 w-96 [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg flex items-center">
+                <?php echo $dataDosen['peran'] ?>
+            </section>
+        </div>
+    </span>
+
+    <!-- Lampiran -->
+    <!-- <span class="flex flex-col gap-2">
+        <h4>Lampiran</h4>
+        <?php foreach ($dataLampiran as $lampiran): ?>
+        <div class="flex gap-2 items-center">
+            <section class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg flex items-center">
+                <?php echo $lampiran['nama_file'] ?>
+            </section>
+            <a href="<?php echo $lampiran['url'] ?>" target="_blank" class="h-14 w-14 flex items-center justify-center bg-gray-100 rounded-lg [box-shadow:0em_0.3em_0.3em#bcbcbc]">
+            <span class="material-symbols-outlined">download</span>
+            </a>
+        </div>
+        <?php endforeach; ?>
+    </span> -->
+    <!-- Lampiran -->
+    <span class="flex flex-col gap-2">
+        <h4>Lampiran</h4>
+        <?php foreach ($dataLampiran as $lampiran): ?>
+        <div class="flex flex-col gap-2">
+            <!-- Keterangan file -->
+            <p class="text-sm text-gray-500"><?php echo $lampiran['keterangan'] ?></p>
+            <!-- Field file -->
+            <div class="flex gap-2 items-center">
+                <section class="p-2 h-14 w-full [box-shadow:0em_0.3em_0.3em#bcbcbc] rounded-lg flex items-center">
+                    <?php echo $lampiran['nama_file'] ?>
+                </section>
+                <a href="<?php echo $lampiran['url'] ?>" target="_blank" class="h-14 w-14 flex items-center justify-center bg-gray-100 rounded-lg [box-shadow:0em_0.3em_0.3em#bcbcbc]">
+                <span class="material-symbols-outlined">download</span>
+                </a>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </span> 
+
     <span class="flex flex-row-reverse relative gap-3">
         <!-- <?php if (!$isKajur) :?>
         <p class="w-36">
