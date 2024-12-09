@@ -13,6 +13,8 @@ return function($router) {
     // Root/Home Route
     $router->get('/', [AuthController::class, 'redirectBasedOnRole']);
 
+    $router->post('/mahasiswa/change-password', [MahasiswaController::class, 'changePassword']);
+
     // Mahasiswa Routes
     $router->get('/mahasiswa', [MahasiswaController::class, 'index']);
     $router->get('/mahasiswa/beranda', [MahasiswaController::class, 'dashboard']);

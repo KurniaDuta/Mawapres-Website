@@ -69,6 +69,46 @@ class User
         return password_verify($inputPassword, $hashedPassword);
     }
 
+    public function updatePassword($identifier, $currentPassword, $newPassword, $confirmPassword)
+    {   
+        if ($newPassword !== $confirmPassword) {
+            throw new Exception("Password baru dan konfirmasi password tidak cocok");
+        }
+
+
+        try {
+            if (!$this->authenticate($identifier, $currentPassword)) {
+                throw new Exception("Password saat ini salah");
+            }
+
+            $user = $this->findUser($identifier);
+            if (!$user){
+                throw new Exception("User tidak ditemukan");
+            }
+
+            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+            if ($user['type'] === 'mahasiswa') {
+                $sql = "UPDATE mahasiswa SET password = ? WHERE nim = ?";
+            } elseif ($user['type'] === 'admin') {
+                $sql = "UPDATE admin SET password = ? WHERE nip = ?";
+            } else {
+                throw new Exception("User tidak ditemukan");
+            }
+
+            $stmt = $this->db->prepareAndExecute($sql, [$hashedPassword, $identifier]);
+
+            if (!$stmt) {
+                throw new Exception("Gagal Update Password");
+            }
+    
+            return true;
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            return false;
+        }
+    }
+
     public function __destruct()
     {
         $this->db->close();
